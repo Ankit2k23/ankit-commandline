@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ankit-commandline   Assignment
 
 
@@ -44,3 +45,6 @@ output:
 
 
 
+=======
+#File is updated and send to remote work
+>>>>>>> 91791cb (Readme file updated)
