@@ -4,30 +4,44 @@
 echo "Enter your number -"
 read num
 
-#initialise variable
-i=2
 
 
-flag=0
+function IS_Prime(){
+        num=$1
+        i=2
 
 
-while test $i -le `expr $num / 2`
+        flag=0
 
-  do
 
-     #checking if i is factor of number
-     if test `expr $num % $i` -eq 0
-     then
-     flag=1
-     fi
+      while [ $i -le $((num / 2 )) ] 
 
-  #increment the loop variable
-  i=`expr $i + 1`
-  done
-  
-if test $flag -eq 1
+      do
+
+         #checking if i is factor of number
+         if test `expr $num % $i` -eq 0
+         then
+         flag=1
+         fi
+
+      #increment the loop variable
+      i=`expr $i + 1`
+      done
+
+      if test $flag -eq 1
+      then
+      echo "Enterd $((num)) is Not Prime"
+      else
+      echo "Enterd $((num)) is prime Prime"
+      fi
+
+}
+
+if [ -z $num ] ;
 then
-echo "Enter num is Not Prime"
+    echo "Please enter some value"
 else
-echo "Enter num is prime Prime"
+	IS_Prime $num	
+	
 fi
+
